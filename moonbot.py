@@ -14,6 +14,12 @@ def fileToList(fileName: str) -> list:
     fileList = fileNamefile.readlines()
     return fileList
 
+def randomIndex(listName):
+    """Returns a random element within a given list"""
+    index = random.randint(0, len(listName)-1)
+    content = listName[index].strip('\n')
+    return content
+
 moonfacts = fileToList("moonfacts.txt")
 moonimgs = fileToList("moonimgs.txt")
 moongifs = fileToList("moongifs.txt")
@@ -31,5 +37,24 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    elif ('moon' in message.content.lower() and 'fact' in message.content.lower()):
+        await message.add_reaction(emoji=str('🌚'))
+        await message.channel.send('Did you know?\n'+randomIndex(moonfacts)+'!')
+    elif ('moon' in message.content.lower() and 'picture' in message.content.lower()) or ('moon' in message.content.lower() and 'image' in message.content.lower()):
+        await message.add_reaction(emoji=str('🌚'))
+        await message.channel.send(randomIndex(moonimgs))
+    elif 'moon' in message.content.lower() and 'gif' in message.content.lower():
+        await message.add_reaction(emoji=str('🌚'))
+        await message.channel.send(randomIndex(moongifs))
+    elif ('moon' in message.content.lower() and 'video' in message.content.lower()) or ('moon' in message.content.lower() and 'movie' in message.content.lower()):
+        await message.add_reaction(emoji=str('🌚'))
+        await message.channel.send(randomIndex(moonvideos))
+    elif 'moon' in message.content.lower():
+        await message.add_reaction(emoji=str('🌜'))
+        contentType = random.randint(0, 3)
+        if contentType == 0 or contentType == 1 or contentType == 2:
+            await message.channel.send('Did you know?\n'+randomIndex(moonfacts)+'!')
+        elif contentType == 3:
+            await message.channel.send(randomIndex(moonmedia))
 
 client.run(BOT_TOKEN)
