@@ -1,10 +1,15 @@
 import os
 import discord
 import random
-from dotenv import load_dotenv
 
-load_dotenv('BOT_TOKEN.env')
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+heroku = False #set to true if hosting on heroku
+
+if heroku == True:
+    BOT_TOKEN = os.environ['BOT_TOKEN']
+else:
+    from dotenv import load_dotenv
+    load_dotenv('BOT_TOKEN.env')
+    BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 client = discord.Client() 
 
