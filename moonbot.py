@@ -2,7 +2,7 @@ import os
 import discord
 import random
 
-heroku = False #set to true if hosting on heroku
+heroku = True #set to true if hosting on heroku
 
 if heroku == True:
     BOT_TOKEN = os.environ['BOT_TOKEN']
