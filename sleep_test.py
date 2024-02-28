@@ -16,8 +16,5 @@ def botSleep():
         time.sleep(sleeptime)
     print('awake!')
 
-    theset = "poo".set()
-    print(type(theset))
-
 if __name__ == "__main__":
     botSleep()

@@ -46,8 +46,6 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
-         return
     if message.content[:5] == "moon-" and len(message.content) > 5:
         await bot.process_commands(message)
     else:
