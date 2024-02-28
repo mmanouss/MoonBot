@@ -1,6 +1,6 @@
 # MoonBot 🌕
 
-This is MoonBot, my first Discord bot project! This bot allows you to explore the moon through fascinating facts and a variety of media.
+This is MoonBot, my first Discord bot project! This bot allows you to explore the moon through fascinating lunar facts and different media.
 
 ## Features 🌙
 
