@@ -44,7 +44,30 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    await client.process_commands(message)
+    if message.author == client.user:
+         return
+    if message.content[:4] != "moon":
+        if ('moon' in message.content.lower() and 'fact' in message.content.lower()):
+            await message.add_reaction(emoji=str('🌚'))
+            await message.channel.send('Did you know?\n'+randomIndex(moonfacts)+'!')
+        elif ('moon' in message.content.lower() and 'picture' in message.content.lower()) or ('moon' in message.content.lower() and 'image' in message.content.lower()):
+            await message.add_reaction(emoji=str('🌚'))
+            await message.channel.send(randomIndex(moonimgs))
+        elif 'moon' in message.content.lower() and 'gif' in message.content.lower():
+            await message.add_reaction(emoji=str('🌚'))
+            await message.channel.send(randomIndex(moongifs))
+        elif ('moon' in message.content.lower() and 'video' in message.content.lower()) or ('moon' in message.content.lower() and 'movie' in message.content.lower()):
+            await message.add_reaction(emoji=str('🌚'))
+            await message.channel.send(randomIndex(moonvideos))
+        elif 'moon' in message.content.lower():
+            await message.add_reaction(emoji=str('🌜'))
+            contentType = random.randint(0, 3)
+            if contentType == 0 or contentType == 1 or contentType == 2:
+                await message.channel.send('Did you know?\n'+randomIndex(moonfacts)+'!')
+            elif contentType == 3:
+                await message.channel.send(randomIndex(moonmedia))
+    else:
+        await client.process_commands(message)
 
 @client.command(name='moon-fact')
 async def moon_fact(ctx):
