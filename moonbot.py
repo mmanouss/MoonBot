@@ -35,6 +35,10 @@ moonvideos = fileToList("moonvideos.txt")
 moonmedia = moonimgs + moongifs + moonvideos
 random.shuffle(moonmedia)
 
+confused_moon_responses = ["Are you talking to me?",
+                           "Am I supposed to respond to that :,)",
+                           "I don't know what you want me to do..."]
+
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='moon enjoyers :)'))
@@ -71,7 +75,7 @@ async def on_message(message):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.message.add_reaction(emoji=str('❔'))
-        await ctx.send("Am I supposed to respond to that :,)")
+        await ctx.send(random.choice(confused_moon_responses))
              
 @bot.command(name="moon-fact", description="Send a random moon fact.")
 async def moon_fact(ctx):
