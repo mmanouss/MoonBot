@@ -37,7 +37,7 @@ random.shuffle(moonmedia)
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='/moon-help :)'))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='/moon-help ⁺₊☾☁︎'))
     print(f'Logged in as {bot.user}')
                
 @bot.slash_command(name="moon-fact", description="Send a random moon fact, with optional keyword.")
