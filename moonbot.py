@@ -19,7 +19,7 @@ def fileToList(fileName: str) -> list:
     """Converts a given file into a list"""
     with open(fileName, "r") as file:
         fileList = file.readlines()
-    return fileList
+    return list(set(fileList))
 
 def randomIndex(listName):
     """Returns a random element within a given list"""
@@ -44,7 +44,7 @@ async def on_ready():
 async def moon_fact(ctx):
     await ctx.defer()
     embed = discord.Embed(title="Moon Fact!", color=0x36393e)
-    embed.add_field(name="⁺₊ Did you know? ⁺₊", value=randomIndex(moonfacts) + '!', inline=False)
+    embed.add_field(name="⁺₊ Did you know? ⁺₊", value=randomIndex(moonfacts), inline=False)
     await ctx.respond(embed=embed)
 
 @bot.slash_command(name="moon-image", description="Send a random moon image.")
