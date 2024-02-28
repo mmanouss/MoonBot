@@ -37,7 +37,7 @@ random.shuffle(moonmedia)
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='moon enjoyers :)'))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='/moon-help :)'))
     print(f'Logged in as {bot.user}')
                
 @bot.slash_command(name="moon-fact", description="Send a random moon fact, with optional keyword.")
@@ -89,11 +89,11 @@ async def moon_video(ctx):
 async def help_command(ctx):
     await ctx.defer()
     embed = discord.Embed(title="☁︎☾☁︎ Moon Bot Commands ☁︎☾☁︎", color=0x36393e)
-    embed.add_field(name="moon-fact", value="Send a random moon fact, with optional keyword.", inline=False)
-    embed.add_field(name="moon-media", value="Send random moon media.", inline=False)
-    embed.add_field(name="moon-image", value="Send a random moon image.", inline=False)
-    embed.add_field(name="moon-gif", value="Send a random moon gif.", inline=False)
-    embed.add_field(name="moon-video", value="Send a random moon video.", inline=False)
+    embed.add_field(name="/moon-fact", value="Send a random moon fact, with optional keyword.", inline=False)
+    embed.add_field(name="/moon-media", value="Send random moon media.", inline=False)
+    embed.add_field(name="/moon-image", value="Send a random moon image.", inline=False)
+    embed.add_field(name="/moon-gif", value="Send a random moon gif.", inline=False)
+    embed.add_field(name="/moon-video", value="Send a random moon video.", inline=False)
     await ctx.respond(embed=embed)
 
 bot.run(BOT_TOKEN)
