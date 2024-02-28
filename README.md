@@ -18,4 +18,4 @@ Simply type the desired command in your Discord channel using a slash (/), and M
 
 ## Getting Started 🚀
 
-To add MoonBot to your server, [click here](to be added). MoonBot aims to make your Discord experience out-of-this-world!
+To add MoonBot to your server, [click here](https://discord.com/oauth2/authorize?client_id=968983594628419645&permissions=826817989696&scope=bot). MoonBot aims to make your Discord experience out-of-this-world!
