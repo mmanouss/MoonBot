@@ -52,7 +52,7 @@ async def moon_fact(ctx, keyword: str = None):
 
     random_fact = random.choice(filtered_facts)
     embed = discord.Embed(title="Moon Fact!", color=0x36393e)
-    if filtered_facts == moonfacts:
+    if keyword and (filtered_facts == moonfacts):
         no_kword = "Unfortunately, no moon facts were found containing the provided keyword '" + keyword + "'.\n\n" + "⁺₊ Have a random moon fact anyway! ⁺₊"
         embed.add_field(name=no_kword, value=random_fact, inline=False)
     else:
