@@ -1,7 +1,7 @@
 import os
+import random
 import discord
 from discord.ext import commands
-import random
 
 heroku = False  # set to true if hosting on heroku
 
@@ -13,7 +13,7 @@ else:
     BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 # add discord application commands
-bot = commands.Bot(command_prefix="")
+bot = commands.Bot()
 
 def fileToList(fileName: str) -> list:
     """Converts a given file into a list"""
@@ -35,73 +35,53 @@ moonvideos = fileToList("moonvideos.txt")
 moonmedia = moonimgs + moongifs + moonvideos
 random.shuffle(moonmedia)
 
-confused_moon_responses = ["Are you talking to me?",
-                           "Am I supposed to respond to that :,)",
-                           "I don't know what you want me to do..."]
-
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='moon enjoyers :)'))
     print(f'Logged in as {bot.user}')
-
-@bot.event
-async def on_message(message):
-    if message.content[:5] == "moon-" and len(message.content) > 5:
-        await bot.process_commands(message)
-    else:
-        if ('moon' in message.content.lower() and 'fact' in message.content.lower()):
-            await message.add_reaction(emoji=str('🌚'))
-            await message.channel.send('Did you know?\n'+randomIndex(moonfacts)+'!')
-        elif ('moon' in message.content.lower() and 'picture' in message.content.lower()) or ('moon' in message.content.lower() and 'image' in message.content.lower()):
-            await message.add_reaction(emoji=str('🌚'))
-            await message.channel.send(randomIndex(moonimgs))
-        elif 'moon' in message.content.lower() and 'gif' in message.content.lower():
-            await message.add_reaction(emoji=str('🌚'))
-            await message.channel.send(randomIndex(moongifs))
-        elif ('moon' in message.content.lower() and 'video' in message.content.lower()) or ('moon' in message.content.lower() and 'movie' in message.content.lower()):
-            await message.add_reaction(emoji=str('🌚'))
-            await message.channel.send(randomIndex(moonvideos))
-        elif 'moon' in message.content.lower():
-            await message.add_reaction(emoji=str('🌜'))
-            contentType = random.randint(0, 3)
-            if contentType == 0 or contentType == 1 or contentType == 2:
-                await message.channel.send('Did you know?\n'+randomIndex(moonfacts)+'!')
-            elif contentType == 3:
-                await message.channel.send(randomIndex(moonmedia))
-            
-@bot.event
-async def on_command_error(ctx, error):
-    if isinstance(error, commands.CommandNotFound):
-        await ctx.message.add_reaction(emoji=str('❔'))
-        await ctx.send(random.choice(confused_moon_responses))
-             
-@bot.command(name="moon-fact", description="Send a random moon fact.")
+               
+@bot.slash_command(name="moon-fact", description="Send a random moon fact.")
 async def moon_fact(ctx):
-    await ctx.message.add_reaction(emoji='🌚')
-    await ctx.send('Did you know?\n' + randomIndex(moonfacts) + '!')
+    await ctx.defer()
+    embed = discord.Embed(title="Moon Fact!", color=0x36393e)
+    embed.add_field(name="⁺₊ Did you know? ⁺₊", value=randomIndex(moonfacts) + '!', inline=False)
+    await ctx.respond(embed=embed)
 
-@bot.command(name="moon-image", description="Send a random moon image.")
+@bot.slash_command(name="moon-image", description="Send a random moon image.")
 async def moon_picture(ctx):
-    await ctx.message.add_reaction(emoji='🌚')
-    await ctx.send(randomIndex(moonimgs))
+    await ctx.defer()
+    embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", color=0x36393e)
+    url = randomIndex(moonimgs)
+    embed.set_image(url=url)
+    await ctx.respond(embed=embed)
+    
+@bot.slash_command(name="moon-media", description="Send random moon media.")
+async def moon_media(ctx):
+    await ctx.defer()
+    url = randomIndex(moonmedia)
+    await ctx.respond(url)
 
-@bot.command(name="moon-gif", description="Send a random moon gif.")
+@bot.slash_command(name="moon-gif", description="Send a random moon gif.")
 async def moon_gif(ctx):
-    await ctx.message.add_reaction(emoji='🌚')
-    await ctx.send(randomIndex(moongifs))
+    await ctx.defer()
+    url = randomIndex(moongifs)
+    await ctx.respond(url)
 
-@bot.command(name="moon-video", description="Send a random moon video.")
+@bot.slash_command(name="moon-video", description="Send a random moon video.")
 async def moon_video(ctx):
-    await ctx.message.add_reaction(emoji='🌚')
-    await ctx.send(randomIndex(moonvideos))
+    await ctx.defer()
+    url = randomIndex(moonvideos)
+    await ctx.respond(url)
         
-@bot.command(name="moon-help", description="moonbot help")
+@bot.slash_command(name="moon-help", description="moonbot help")
 async def help_command(ctx):
-    embed = discord.Embed(title="Moon Bot Commands", color=0x36393e)
+    await ctx.defer()
+    embed = discord.Embed(title="☁︎☾☁︎ Moon Bot Commands ☁︎☾☁︎", color=0x36393e)
     embed.add_field(name="moon-fact", value="Send a random moon fact.", inline=False)
+    embed.add_field(name="moon-media", value="Send random moon media.", inline=False)
     embed.add_field(name="moon-image", value="Send a random moon image.", inline=False)
     embed.add_field(name="moon-gif", value="Send a random moon gif.", inline=False)
     embed.add_field(name="moon-video", value="Send a random moon video.", inline=False)
-    await ctx.send(embed=embed)
+    await ctx.respond(embed=embed)
 
 bot.run(BOT_TOKEN)
