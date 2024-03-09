@@ -42,7 +42,6 @@ async def on_ready():
                
 @bot.slash_command(name="moon-fact", description="Send a random moon fact, with optional keyword.")
 async def moon_fact(ctx, keyword: str = None):
-    await ctx.defer()
     # Filter moonfacts based on the provided keyword
     filtered_facts = []
     if keyword:
@@ -61,7 +60,6 @@ async def moon_fact(ctx, keyword: str = None):
 
 @bot.slash_command(name="moon-image", description="Send a random moon image.")
 async def moon_picture(ctx):
-    await ctx.defer()
     embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", color=0x36393e)
     url = randomIndex(moonimgs)
     embed.set_image(url=url)
@@ -69,25 +67,21 @@ async def moon_picture(ctx):
     
 @bot.slash_command(name="moon-media", description="Send random moon media.")
 async def moon_media(ctx):
-    await ctx.defer()
     url = randomIndex(moonmedia)
     await ctx.respond(url)
 
 @bot.slash_command(name="moon-gif", description="Send a random moon gif.")
 async def moon_gif(ctx):
-    await ctx.defer()
     url = randomIndex(moongifs)
     await ctx.respond(url)
 
 @bot.slash_command(name="moon-video", description="Send a random moon video.")
 async def moon_video(ctx):
-    await ctx.defer()
     url = randomIndex(moonvideos)
     await ctx.respond(url)
         
 @bot.slash_command(name="moon-help", description="moonbot help")
 async def help_command(ctx):
-    await ctx.defer()
     embed = discord.Embed(title="☁︎☾☁︎ Moon Bot Commands ☁︎☾☁︎", color=0x36393e)
     embed.add_field(name="/moon-fact", value="Send a random moon fact, with optional keyword.", inline=False)
     embed.add_field(name="/moon-media", value="Send random moon media.", inline=False)
