@@ -60,12 +60,15 @@ async def moon_fact(ctx, keyword: str = None):
 @bot.slash_command(name="moon-image", description="Send a random moon image.")
 async def moon_picture(ctx):
     url = randomIndex(moonimgs)
-    if "https://media.discordapp.net/attachments/" in url:
-        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Taken by Dennis Melka", color=0x36393e)
+    if ".gif" not in url:
+        if "https://media.discordapp.net/attachments/" in url:
+            embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Taken by Dennis Melka", color=0x36393e)
+        else:
+            embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", color=0x36393e)
+        embed.set_image(url=url)
+        await ctx.respond(embed=embed)
     else:
-        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", color=0x36393e)
-    embed.set_image(url=url)
-    await ctx.respond(embed=embed)
+        await ctx.respond(url)
     
 @bot.slash_command(name="moon-media", description="Send random moon media.")
 async def moon_media(ctx):
