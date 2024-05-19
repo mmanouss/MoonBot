@@ -5,7 +5,7 @@ def fileToList(fileName: str) -> list:
     with open(fileName, "r") as file:
         return file.readlines()
 
-def parseEclipseData(eclipseList: list) -> list:
+def parseEclipseFile(eclipseList: list) -> list:
     """Parses the eclipse data into a list of dictionaries."""
     eclipse_list = []
     lines = eclipseList
@@ -37,7 +37,7 @@ def parseEclipseData(eclipseList: list) -> list:
         eclipse_list.append(eclipse_info)
     return eclipse_list
 
-def nextEclipse(next_eclipse: dict) -> str:
+def parseEclipse(next_eclipse: dict) -> str:
     eclipse_magnitude_calculation = f"The moon's apparent diameter will be {next_eclipse['eclipse_magnitude']*100:.1f}% of the Sun's apparent diameter, so "
     eclipse_magnitude_specifics = {"Total": eclipse_magnitude_calculation + "the Sun will be completely covered. ", 
                                 "Partial": eclipse_magnitude_calculation + "a portion of the Sun will be visible. ", 
@@ -56,5 +56,5 @@ def nextEclipse(next_eclipse: dict) -> str:
     
     return eclipse_info + "\n\n" + countdown
 
-# eclipseData = parseEclipseData(fileToList("future_eclipses.txt"))
-# print(nextEclipse(eclipseData[0]))
+# eclipseData = parseEclipseFile(fileToList("future_eclipses.txt"))
+# print(parseEclipse(eclipseData[0]))

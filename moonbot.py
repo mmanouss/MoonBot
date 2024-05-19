@@ -2,7 +2,7 @@ import os
 import random
 import discord
 from discord.ext import commands
-from eclipse_parsing import parseEclipseData, nextEclipse
+from eclipse_parsing import parseEclipseFile, parseEclipse
 
 # Eclipse Data Source: https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html
 
@@ -32,7 +32,7 @@ def randomIndex(listName):
 moonfacts = list(set(fileToList("moonfacts.txt")))
 moonimgs = list(set(fileToList("moonimgs.txt")))
 moonvideos = list(set(fileToList("moonvideos.txt")))
-eclipseData = parseEclipseData(fileToList("future_eclipses.txt"))
+eclipseData = parseEclipseFile(fileToList("future_eclipses.txt"))
 
 moonmedia = moonimgs + moonvideos
 random.shuffle(moonmedia)
@@ -86,22 +86,22 @@ async def moon_video(ctx):
 @bot.slash_command(name="next-eclipse", description="Receive information about the next total solar eclipse date, optionally in a specified region.")
 async def next_eclipse(ctx, keyword: str = None):
     if keyword:
-        next_eclipse = None
+        target_eclipse = None
         for eclipse in eclipseData:
             if keyword.lower() in eclipse['geographic_region'].lower():
-                next_eclipse = eclipse
+                target_eclipse = eclipse
                 break
     else:
-        next_eclipse = eclipseData[0]
+        target_eclipse = eclipseData[0]
     
     embed = discord.Embed(title="Upcoming Solar Eclipse...", color=0x36393e)
-    if keyword and not next_eclipse:
+    if keyword and not target_eclipse:
         no_kword = f"Unfortunately, no eclipse was found in the given region of '{keyword}'.\n\nHere is information about the soonest solar eclipse:"
-        eclipse_str = nextEclipse(eclipseData[0])
+        eclipse_str = parseEclipse(eclipseData[0])
         embed.add_field(name=no_kword, value=eclipse_str, inline=False)
     else:
-        eclipse_str = nextEclipse(next_eclipse)
-        embed.add_field(name="Solar Eclipse: "+next_eclipse["date"], value=eclipse_str, inline=False)
+        eclipse_str = parseEclipse(target_eclipse)
+        embed.add_field(name="Solar Eclipse: "+target_eclipse["date"], value=eclipse_str, inline=False)
     await ctx.respond(embed=embed)
         
 @bot.slash_command(name="moon-help", description="moonbot help")
