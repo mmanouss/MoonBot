@@ -98,10 +98,13 @@ async def next_eclipse(ctx, keyword: str = None):
     if keyword and not target_eclipse:
         no_kword = f"Unfortunately, no eclipse was found in the given region of '{keyword}'.\n\nHere is information about the soonest solar eclipse:"
         eclipse_str = parseEclipse(eclipseData[0])
-        embed.add_field(name=no_kword, value=eclipse_str, inline=False)
+        embed.add_field(name=no_kword, value=f"* The {eclipse_str[0]}{eclipse_str[1]}", inline=False)
     else:
         eclipse_str = parseEclipse(target_eclipse)
-        embed.add_field(name="Solar Eclipse: "+target_eclipse["date"], value=eclipse_str, inline=False)
+        if keyword:
+            embed.add_field(name=f"In {keyword}, the {eclipse_str[0]}", value=f"\n{eclipse_str[1]}", inline=False)
+        else:
+            embed.add_field(name=f"The {eclipse_str[0]}", value=f"\n{eclipse_str[1]}", inline=False)
     await ctx.respond(embed=embed)
         
 @bot.slash_command(name="moon-help", description="moonbot help")

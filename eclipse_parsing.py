@@ -38,12 +38,13 @@ def parseEclipseFile(eclipseList: list) -> list:
     return eclipse_list
 
 def parseEclipse(next_eclipse: dict) -> str:
-    eclipse_magnitude_calculation = f"The moon's apparent diameter will be {next_eclipse['eclipse_magnitude']*100:.1f}% of the Sun's apparent diameter, so "
+    eclipse_magnitude_calculation = f"* The moon's apparent diameter will be **{next_eclipse['eclipse_magnitude']*100:.1f}% of the Sun's apparent diameter**, so "
     eclipse_magnitude_specifics = {"Total": eclipse_magnitude_calculation + "the Sun will be completely covered. ", 
                                 "Partial": eclipse_magnitude_calculation + "a portion of the Sun will be visible. ", 
                                 "Annular": eclipse_magnitude_calculation + "the outer edge of the Sun will still be visible. "}
     
-    eclipse_info = f"The next solar eclipse will be {next_eclipse['eclipse_type']} on {next_eclipse['date']} at {next_eclipse['time_of_greatest_eclipse']} UTC, with a central duration of {next_eclipse['central_duration']}.\n" + eclipse_magnitude_specifics[next_eclipse['eclipse_type']] + f"\nIt will be visible in {next_eclipse['geographic_region']}."
+    eclipse_info = f"solar eclipse will be **{next_eclipse['eclipse_type']} on {next_eclipse['date']} at {next_eclipse['time_of_greatest_eclipse']} UTC**, with a central duration of {next_eclipse['central_duration']}.\n"
+    eclipse_info_p2 = f"{eclipse_magnitude_specifics[next_eclipse['eclipse_type']]}\n* It will be visible in {next_eclipse['geographic_region']}."
     
     # Eclipse countdown logic
     import datetime
@@ -52,9 +53,9 @@ def parseEclipse(next_eclipse: dict) -> str:
     days_remaining = time_remaining.days
     hours_remaining, remainder = divmod(time_remaining.seconds, 3600)
     minutes_remaining, seconds_remaining = divmod(remainder, 60)
-    countdown = f"Countdown: {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds."
+    countdown = f"**Countdown: {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds.**"
     
-    return eclipse_info + "\n\n" + countdown
+    return [eclipse_info, eclipse_info_p2 + "\n\n" + countdown]
 
 # eclipseData = parseEclipseFile(fileToList("future_eclipses.txt"))
 # print(parseEclipse(eclipseData[0]))
