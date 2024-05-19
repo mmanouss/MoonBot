@@ -61,9 +61,9 @@ async def moon_fact(ctx, keyword: str = None):
 async def moon_picture(ctx):
     url = randomIndex(moonimgs)
     if "https://media.discordapp.net/attachments/" in url:
-        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Captured by: Dennis Melka", color=0x36393e)
+        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Taken by Dennis Melka", color=0x36393e)
     else:
-        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Source:"+url, color=0x36393e)
+        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", color=0x36393e)
     embed.set_image(url=url)
     await ctx.respond(embed=embed)
     
