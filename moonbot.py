@@ -29,10 +29,9 @@ def randomIndex(listName):
 
 moonfacts = fileToList("moonfacts.txt")
 moonimgs = fileToList("moonimgs.txt")
-moongifs = fileToList("moongifs.txt")
 moonvideos = fileToList("moonvideos.txt")
 
-moonmedia = moonimgs + moongifs + moonvideos
+moonmedia = moonimgs + moonvideos
 random.shuffle(moonmedia)
 
 @bot.event
@@ -60,19 +59,17 @@ async def moon_fact(ctx, keyword: str = None):
 
 @bot.slash_command(name="moon-image", description="Send a random moon image.")
 async def moon_picture(ctx):
-    embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", color=0x36393e)
     url = randomIndex(moonimgs)
+    if "https://media.discordapp.net/attachments/" in url:
+        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Captured by: Dennis Melka", color=0x36393e)
+    else:
+        embed = discord.Embed(title="⁺₊ Moon Image ⁺₊", description="Source:", url=url, color=0x36393e)
     embed.set_image(url=url)
     await ctx.respond(embed=embed)
     
 @bot.slash_command(name="moon-media", description="Send random moon media.")
 async def moon_media(ctx):
     url = randomIndex(moonmedia)
-    await ctx.respond(url)
-
-@bot.slash_command(name="moon-gif", description="Send a random moon gif.")
-async def moon_gif(ctx):
-    url = randomIndex(moongifs)
     await ctx.respond(url)
 
 @bot.slash_command(name="moon-video", description="Send a random moon video.")
@@ -86,7 +83,6 @@ async def help_command(ctx):
     embed.add_field(name="/moon-fact", value="Send a random moon fact, with optional keyword.", inline=False)
     embed.add_field(name="/moon-media", value="Send random moon media.", inline=False)
     embed.add_field(name="/moon-image", value="Send a random moon image.", inline=False)
-    embed.add_field(name="/moon-gif", value="Send a random moon gif.", inline=False)
     embed.add_field(name="/moon-video", value="Send a random moon video.", inline=False)
     await ctx.respond(embed=embed)
 
