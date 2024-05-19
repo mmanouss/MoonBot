@@ -1,2 +1,2 @@
-BOT_TOKEN.env
+*.env
 sleep_test.py
