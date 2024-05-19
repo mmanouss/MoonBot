@@ -44,7 +44,7 @@ def parseEclipse(next_eclipse: dict) -> str:
                                 "Annular": eclipse_magnitude_calculation + "the outer edge of the Sun will still be visible. "}
     
     eclipse_info = f"solar eclipse will be **{next_eclipse['eclipse_type']} on {next_eclipse['date']} at {next_eclipse['time_of_greatest_eclipse']} UTC**, with a central duration of {next_eclipse['central_duration']}.\n"
-    eclipse_info_p2 = f"{eclipse_magnitude_specifics[next_eclipse['eclipse_type']]}\n* It will be visible in {next_eclipse['geographic_region']}."
+    eclipse_info_p2 = f"{eclipse_magnitude_specifics[next_eclipse['eclipse_type']]}\n* It will be visible in {next_eclipse['geographic_region']}.\n*Geographic abbreviations: n = north, s = south, e = east, w = west, c = central"
     
     # Eclipse countdown logic
     import datetime

@@ -83,7 +83,7 @@ async def moon_video(ctx):
     url = randomIndex(moonvideos)
     await ctx.respond(url)
     
-@bot.slash_command(name="next-eclipse", description="Receive information about the next solar eclipse date, optionally in a specified region.")
+@bot.slash_command(name="next-eclipse", description="Receive information about the next solar eclipse, optionally in a specified region.")
 async def next_eclipse(ctx, keyword: str = None):
     if keyword:
         target_eclipse = None
@@ -114,7 +114,7 @@ async def help_command(ctx):
     embed.add_field(name="/moon-media", value="Send random moon media.", inline=False)
     embed.add_field(name="/moon-image", value="Send a random moon image.", inline=False)
     embed.add_field(name="/moon-video", value="Send a random moon video.", inline=False)
-    embed.add_field(name="/next-eclipse", value="Receive information about the next solar eclipse date, optionally in a specified region.", inline=False)
+    embed.add_field(name="/next-eclipse", value="Receive information about the next solar eclipse, optionally in a specified region.", inline=False)
     await ctx.respond(embed=embed)
 
 bot.run(BOT_TOKEN)
