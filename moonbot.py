@@ -105,11 +105,10 @@ async def next_eclipse(ctx, keyword: str = None):
     # Eclipse countdown logic
     import datetime
     eclipse_datetime = datetime.datetime.strptime(next_eclipse["date"] + " " + next_eclipse["time_of_greatest_eclipse"], "%Y %b %d %H:%M:%S")
-    time_remaining = eclipse_datetime - datetime.datetime.utcnow()
+    time_remaining = eclipse_datetime - datetime.datetime.now(datetime.UTC)
     days_remaining = time_remaining.days
     hours_remaining, remainder = divmod(time_remaining.seconds, 3600)
     minutes_remaining, seconds_remaining = divmod(remainder, 60)
-    
     countdown = f"The eclipse will occur in {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds."
     
     embed = discord.Embed(title="Upcoming Solar Eclipse...", color=0x36393e)
