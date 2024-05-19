@@ -2,7 +2,7 @@ import os
 import random
 import discord
 from discord.ext import commands
-from eclipse_parsing import parseEclipseData
+from eclipse_parsing import parseEclipseData, nextEclipse
 
 # Eclipse Data Source: https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html
 
@@ -83,7 +83,7 @@ async def moon_video(ctx):
     url = randomIndex(moonvideos)
     await ctx.respond(url)
     
-@bot.slash_command(name="next-eclipse", description="Receive a countdown to the next total solar eclipse date and location(s).")
+@bot.slash_command(name="next-eclipse", description="Receive information about the next total solar eclipse date, optionally in a specified region.")
 async def next_eclipse(ctx, keyword: str = None):
     if keyword:
         next_eclipse = None
@@ -94,29 +94,14 @@ async def next_eclipse(ctx, keyword: str = None):
     else:
         next_eclipse = eclipseData[0]
     
-    eclipse_magnitude_info = ". The eclipse magnitude represents how much of the Sun's diameter is obscured by the Moon during the peak of an eclipse."
-    eclipse_magnitude_calculation = f"The moon's apparent diameter will be {next_eclipse['eclipse_magnitude']*100}% of the Sun's apparent diameter, so "
-    eclipse_magnitude_specifics = {"Total": eclipse_magnitude_calculation + "the Sun will be completely covered. ", 
-                                "Partial": eclipse_magnitude_calculation + "a portion of the Sun will be visible. ", 
-                                "Annular": eclipse_magnitude_calculation + "the outer edge of the Sun will still be visible. "}
-    
-    eclipse_info = f"The next solar eclipse will be {next_eclipse['eclipse_type']} on {next_eclipse['date']} at {next_eclipse['time_of_greatest_eclipse']} UTC, with a central duration of {next_eclipse['central_duration']}" + eclipse_magnitude_info + eclipse_magnitude_specifics[next_eclipse['eclipse_type']] + f"It will be visible in {next_eclipse['geographic_region']}."
-    
-    # Eclipse countdown logic
-    import datetime
-    eclipse_datetime = datetime.datetime.strptime(next_eclipse["date"] + " " + next_eclipse["time_of_greatest_eclipse"], "%Y %b %d %H:%M:%S")
-    time_remaining = eclipse_datetime - datetime.datetime.now(datetime.UTC)
-    days_remaining = time_remaining.days
-    hours_remaining, remainder = divmod(time_remaining.seconds, 3600)
-    minutes_remaining, seconds_remaining = divmod(remainder, 60)
-    countdown = f"The eclipse will occur in {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds."
-    
     embed = discord.Embed(title="Upcoming Solar Eclipse...", color=0x36393e)
     if keyword and not next_eclipse:
-        no_kword = f"Unfortunately, no eclipse was found in the given region of '{keyword}'.\n\nHere is information about the upcoming solar eclipse:"
-        embed.add_field(name=no_kword, value=eclipse_info + "\n\n" + countdown, inline=False)
+        no_kword = f"Unfortunately, no eclipse was found in the given region of '{keyword}'.\n\nHere is information about the soonest solar eclipse:"
+        eclipse_str = nextEclipse(eclipseData[0])
+        embed.add_field(name=no_kword, value=eclipse_str, inline=False)
     else:
-        embed.add_field(name="Solar Eclipse: "+next_eclipse["date"], value=eclipse_info + "\n\n" + countdown, inline=False)
+        eclipse_str = nextEclipse(next_eclipse)
+        embed.add_field(name="Solar Eclipse: "+next_eclipse["date"], value=eclipse_str, inline=False)
     await ctx.respond(embed=embed)
         
 @bot.slash_command(name="moon-help", description="moonbot help")
@@ -126,7 +111,7 @@ async def help_command(ctx):
     embed.add_field(name="/moon-media", value="Send random moon media.", inline=False)
     embed.add_field(name="/moon-image", value="Send a random moon image.", inline=False)
     embed.add_field(name="/moon-video", value="Send a random moon video.", inline=False)
-    embed.add_field(name="/next-eclipse", value="Receive a countdown to the next total solar eclipse date and location(s).", inline=False)
+    embed.add_field(name="/next-eclipse", value="Receive information about the next total solar eclipse date, optionally in a specified region.", inline=False)
     await ctx.respond(embed=embed)
 
-bot.run(BOT_TOKEN)
+# bot.run(BOT_TOKEN)
