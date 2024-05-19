@@ -13,3 +13,161 @@
 2029 Dec 05	15:03:57	Partial	123	0.891	-	s Argentina, s Chile, Antarctica
 2030 Jun 01	06:29:13	Annular	128	0.944	05m21s	Europe, n Africa, Mid East, Asia, Arctic, Alaska [Annular: Algeria, Tunisia, Greece, Turkey, Russia, n. China, Japan]
 2030 Nov 25	06:51:37	Total	133	1.047	03m44s	s Africa, s Indian Oc., E. Indies, Australia, Antarctica [Total: Botswana, S. Africa, Australia]
+2031 May 21	07:16:04	Annular	138	0.959	05m26s	Africa, s Asia, E. Indies, Australia [Annular: Angola, Congo, Zambia, Tanzania, s. India, Malaysia, Indonesia]
+2031 Nov 14	21:07:30	Hybrid	143	1.011	01m08s	Pacific, s US, C. America, nw S. America [Hybrid: Pacific, Panama]
+2032 May 09	13:26:42	Annular	148	0.996	00m22s	s S. America, s Africa [Annular: s Atlantic]
+2032 Nov 03	05:34:12	Partial	153	0.855	-	Asia
+2033 Mar 30	18:02:35	Total	120	1.046	02m37s	N. America [Total: e Russia, Alaska]
+2033 Sep 23	13:54:31	Partial	125	0.689	-	s S. America, Antarctica
+2034 Mar 20	10:18:45	Total	130	1.046	04m09s	Africa, Europe, w Asia [Total: Nigeria, Cameroon, Chad, Sudan, Egypt, Saudi Arabia, Iran, Afghanistan, Pakistan, India, China]
+2034 Sep 12	16:19:27	Annular	135	0.974	02m58s	C. America, S. America [Annular: Chile, Bolivia, Argentina, Paraguay, Brazil]
+2035 Mar 09	23:05:53	Annular	140	0.992	00m48s	Australia, New Zealand, s Pacific, Mexico, Antarctica [Annular: New Zealand, Pacific]
+2035 Sep 02	01:56:46	Total	145	1.032	02m54s	e Asia, Pacific [Total: China, Korea, Japan, Pacific]
+2036 Feb 27	04:46:49	Partial	150	0.629	-	Antarctica, s Australia, New Zealand
+2036 Jul 23	10:32:06	Partial	117	0.199	-	s Atlantic
+2036 Aug 21	17:25:45	Partial	155	0.862	-	Alaska, Canada, Arctic, w Europe, nw Africa
+2037 Jan 16	09:48:55	Partial	122	0.705	-	n Africa, Europe, Mid East, w Asia
+2037 Jul 13	02:40:35	Total	127	1.041	03m58s	E. Indies, Australia, Pacific [Total: Australia, New Zealand]
+2038 Jan 05	13:47:10	Annular	132	0.973	03m18s	e N. America, n S. America, Atlantic, Africa, Europe [Annular: Cuba, Dom.Rep., Cote d'Ivoire, Ghana, Niger, Chad, Egypt]
+2038 Jul 02	13:32:54	Annular	137	0.991	01m00s	N. & C. America, S. America, Africa, Europe, Mid East [Annular: Colombia, Venezuela, Mauritania, Morocco, Mali, Niger, Chad, Sudan, Ethiopia, Kenya]
+2038 Dec 26	01:00:10	Total	142	1.027	02m18s	se Asia, E. Indies, Australia, New Zealand, s Pacific, Antarctica [Total: Australia, New Zealand, s Pacific]
+2039 Jun 21	17:12:53	Annular	147	0.945	04m05s	N. America, w Europe [Annular: Alaska, n Canada, Norway, Sweden, Finland, Estonia, Russia]
+2039 Dec 15	16:23:46	Total	152	1.036	01m51s	s S. America, Antarctica [Total: Antarctica]
+2040 May 11	03:43:02	Partial	119	0.531	-	Australia, N.Z., Antarctica
+2040 Nov 04	19:09:01	Partial	124	0.807	-	N. & C. America
+2041 Apr 30	11:52:20	Total	129	1.019	01m51s	Brazil, Africa, Mid East [Total: Angola, Congo, Uganda, Kenya, Somalia]
+2041 Oct 25	01:36:21	Annular	134	0.947	06m07s	e Asia, Pacific [Annular: Mongolia, China, Korea, Japan, Pacific]
+2042 Apr 20	02:17:30	Total	139	1.061	04m51s	e Asia, se Asia, Australia, Pacific [Total: Malaysia, Indondesia, Philippines, n Pacific]
+2042 Oct 14	02:00:41	Annular	144	0.930	07m44s	se Asia, E. Indies, Australia, , s Pacific, Antarctica [Annular: Thailand, Malaysia, Indonesia, Australia, New Zealand]
+2043 Apr 09	18:57:49	Total	149	1.010	-	n N. America, ne Asia [Total: ne Russia]
+2043 Oct 03	03:01:48	Annular	154	0.950	-	Antarctica, sw Australia, Indian Ocean [Annular: s Indian Ocean]
+2044 Feb 28	20:24:39	Annular	121	0.960	02m27s	Antarctica, S. America [Annular: s Atlantic]
+2044 Aug 23	01:17:01	Total	126	1.036	02m04s	n Asia, w N. America, Greenland [Total: Greenland, n Canada, Montana, N. Dakota]
+2045 Feb 16	23:56:06	Annular	131	0.928	07m47s	Australia, New Zealand, Pacific, Hawaii [Annular: New Zealand, Pacific]
+2045 Aug 12	17:42:39	Total	136	1.077	06m06s	N. & C. America, S. America, w Africa [Total: s US, Haiti, Dominican Rep., Venezuela, Guyana, Fr. Guyana, Suriname, Brazil]
+2046 Feb 05	23:06:26	Annular	141	0.923	09m42s	Australia, Papua New Guinea, w US [Annular: Papua New Guinea, Hawaii, California, Oregon, Idaho]
+2046 Aug 02	10:21:13	Total	146	1.053	04m51s	Brazil, Africa [Total: Brazil, Angola, e Namibia, Botswana, S. Africa, Swaziland, s Mozambique]
+2047 Jan 26	01:33:17	Partial	151	0.891	-	e Asia, Alaska
+2047 Jun 23	10:52:30	Partial	118	0.313	-	n Canada, Greenland, ne Asia
+2047 Jul 22	22:36:16	Partial	156	0.361	-	se Australia, New Zealand
+2047 Dec 16	23:50:12	Partial	123	0.882	-	Antarctica, s Chile, s Argentina
+2048 Jun 11	12:58:52	Annular	128	0.944	04m58s	N. America, Caribbean, n Africa, Europe, w Asia [Annular: midwest US, Quebec, Ontario, Greenland, Iceland, Norway, Sweden, Russia, Afganistan]
+2048 Dec 05	15:35:27	Total	133	1.044	03m28s	s S. America, sw Africa [Total: Chile, Argentina, Namibia, Botswana]
+2049 May 31	13:59:58	Annular	138	0.963	04m45s	se US, C. America, S. America, Africa, s Europe [Annular: Peru, Ecuador, Colombia, Venezuela, Guyana, Senegal, Mali, Burkina Faso, Ghana, Nigeria]
+2049 Nov 25	05:33:47	Hybrid	143	1.006	00m38s	e Africa, s Asia, East Indies, Australia [Hybrid: Saudi Arabia, Yemen, Malaysia, Indonesia]
+2050 May 20	20:42:50	Hybrid	148	1.004	00m21s	N.Z., s Pacific, sw S. America [Hybrid: s Pacific]
+2050 Nov 14	13:30:52	Partial	153	0.887	-	ne US, e Canada, n Africa, Europe
+2051 Apr 11	02:10:38	Partial	120	0.985	-	Asia, Alaska, Canada, Greenland
+2051 Oct 04	21:02:14	Partial	125	0.602	-	Antarctica, Australia, New Zealand
+2052 Mar 30	18:31:52	Total	130	1.047	04m08s	N. America, C. America, n S. America [Total: Central Pacific, Mexico, U.S., Central Atlantic]
+2052 Sep 22	23:39:09	Annular	135	0.973	02m51s	Australia, N.Z., Antarctica, w Indies [Annular: Australia, South Pacific]
+2053 Mar 20	07:08:19	Annular	140	0.992	00m50s	Africa, Indies, Australia, Antarctica [Annular: Central Indian, Indonesia]
+2053 Sep 12	09:34:09	Total	145	1.033	03m04s	Greenland, Africa, Europe, Asia [Total: Morocco, Algeria, Tunisia, Libya, Egypt. Saudi Arabia, Indonesia]
+2054 Mar 09	12:33:40	Partial	150	0.668	-	Antarctica, South Africa, Madagascar, Chile
+2054 Aug 03	18:04:01	Partial	117	0.066	-	Antarctica
+2054 Sep 02	01:09:33	Partial	155	0.979	-	Asia, U.S., Canada, Greenland
+2055 Jan 27	17:54:05	Partial	122	0.693	-	Canada, U.S., Mexico, Cuba
+2055 Jul 24	09:57:49	Total	127	1.036	03m17s	Africa, Antarctica [Total: South Africa]
+2056 Jan 16	22:16:45	Annular	132	0.976	02m52s	N.Z., Central Pacific, Western North America [Annular: Central Pacific, Mexico]
+2056 Jul 12	20:21:58	Annular	137	0.988	01m26s	s N. America, C. America, n S. America [Annular: Central Pacific, Colombia, Ecuador, Peru, Brazil]
+2057 Jan 05	09:47:51	Total	142	1.029	02m29s	Africa, Antarctica, Australia [Total: Southern Atlantic, Southern Indian]
+2057 Jul 01	23:40:15	Annular	147	0.946	04m22s	Asia, North America [Annular: China, Mongolia, Russia, Canada, U.S.]
+2057 Dec 26	01:14:35	Total	152	1.035	01m50s	Antarctica, Australia [Total: Antarctica]
+2058 May 22	10:39:25	Partial	119	0.414	-	South Africa, Madagascar
+2058 Jun 21	00:19:34	Partial	157	0.126	-	Russia, Greenland, Norway, Sweden, Finland
+2058 Nov 16	03:23:07	Partial	124	0.764	-	Russia, China, Mongolia, Japan
+2059 May 11	19:22:15	Total	129	1.024	02m23s	N. America, C. America, S. America [Total: Central Pacific, Ecuador, Peru, Brazil]
+2059 Nov 05	09:18:14	Annular	134	0.942	07m00s	Africa, Europe, Asia [Annular: France, Libya, Egypt, Sudan, Ethiopia, Eritrea, Somalia, Indonesia]
+2060 Apr 30	10:09:59	Total	139	1.066	05m15s	Africa, Asia [Total: Ivory Coast, Ghana, Togo, Benin, Nigeria, Niger, Chad, Libya, Egypt, Turkey, Kazakhstan, Russia]
+2060 Oct 24	09:24:10	Annular	144	0.928	08m06s	Africa, Antarctica, S. America [Annular: Guinea, Sierra Leone, Liberia, Ivory Coast, Angola, Nambia, Botswana, South Africa]
+2061 Apr 20	02:56:49	Total	149	1.048	02m37s	Asia. Middle East, N. America [Total: Kazakhstan, Russia]
+2061 Oct 13	10:32:09	Annular	154	0.947	03m41s	Antarctica, S. America [Annular: Antarctica, Argentina, Chile]
+2062 Mar 11	04:26:15	Partial	121	0.933	-	Antarctica, Australia, New Zealand
+2062 Sep 03	08:54:26	Partial	126	0.975	-	Greenland, Europe, Asia
+2063 Feb 28	07:43:29	Annular	131	0.929	07m41s	Africa, Indies, se Asia, Antarctica, Australia [Annular: Indian Ocean, Indonesia, Malaysia]
+2063 Aug 24	01:22:10	Total	136	1.075	05m49s	Asia, Central Pacific [Total: China, Mongolia, Japan, Central Pacific]
+2064 Feb 17	07:00:23	Annular	141	0.926	08m56s	Africa, Asia [Annular: Zaire, Zambia, Tanzania, India, Nepal, Bangladesh, Bhutan, China]
+2064 Aug 12	17:46:05	Total	146	1.049	04m28s	Americas, Antarctica [Total: Central Pacific, Chile, Argentina]
+2065 Feb 05	09:52:25	Partial	151	0.912	-	North Africa, Europe, West Asia
+2065 Jul 03	17:33:52	Partial	118	0.164	-	Northern Europe, Russia
+2065 Aug 02	05:34:16	Partial	156	0.490	-	Antarctica, South Africa, Madagascar
+2065 Dec 27	08:39:55	Partial	123	0.877	-	Chile Argentina, Antarctica, Australia
+2066 Jun 22	19:25:47	Annular	128	0.943	04m40s	N. America, n Europe, n Asia [Annular: Russia, Alaska, Canada]
+2066 Dec 17	00:23:39	Total	133	1.042	03m14s	Australia, Antarctica, N.Z. [Total: Australia, New Zealand, South Pacific]
+2067 Jun 11	20:42:26	Annular	138	0.967	04m05s	Americas [Annular: Central Pacific, Ecuador, Peru]
+2067 Dec 06	14:03:42	Hybrid	143	1.001	00m08s	Americas, Africa, s Europe [Hybrid: Honduras, Nicaragua, Colombia, Venezuela, Guyana, Brazil, Nigeria, Cameroon, Chad, Sudan]
+2068 May 31	03:56:39	Total	148	1.011	01m06s	Indies, Australia, Antarctica [Total: Australia, New Zealand]
+2068 Nov 24	21:32:29	Partial	153	0.911	-	North America, Russia
+2069 Apr 21	10:11:08	Partial	120	0.899	-	Europe, Asia, n Africa, N. America
+2069 May 20	17:53:17	Partial	158	0.088	-	South America, Antarctica
+2069 Oct 15	04:19:56	Partial	125	0.530	-	Antarctica
+2070 Apr 11	02:36:09	Total	130	1.047	04m04s	Asia, Indies, Alaska, Canada [Total: Sri Lanka, Myanmar, Thailand, Laos, Vietnam, Philippines]
+2070 Oct 04	07:08:56	Annular	135	0.973	02m44s	Africa, Antarctica, Australia [Annular: Angola, Zambia, Zimbabwe, Mozambique, Madagascar]
+2071 Mar 31	15:01:05	Annular	140	0.992	00m52s	S. America, Africa, Antarctica [Annular: Chile, Argentina, Paraguay, Brazil, Congo, Zaire]
+2071 Sep 23	17:20:28	Total	145	1.033	03m11s	Americas, Africa [Total: Mexico, Colombia, Venezuela, Guyana, Suriname, French Guiana, Brazil]
+2072 Mar 19	20:10:31	Partial	150	0.720	-	Antarctica, S. America
+2072 Sep 12	08:59:20	Total	155	1.056	03m13s	Greenland, Europe, Asia [Total: Russia]
+2073 Feb 07	01:55:58	Partial	122	0.677	-	Asia, Alaska
+2073 Aug 03	17:15:22	Total	127	1.029	02m29s	S. America, Antarctica [Total: Chile, Argentina]
+2074 Jan 27	06:44:14	Annular	132	0.980	02m21s	Africa, Asia, Indies [Annular: Sudan, Ethiopia, Somalia, Sri Lanka, Myanmar, Thailand, Laos, Vietnam, China, Japan]
+2074 Jul 24	03:10:31	Annular	137	0.984	01m57s	Asia, Indies, Australia, N.Z. [Annular: Thailand, Cambodia, Vietnam, Philippines]
+2075 Jan 16	18:36:03	Total	142	1.031	02m42s	N.Z., S. America, Antarctica, [Total: Chile, Argentina, Paraguay, Brazil]
+2075 Jul 13	06:05:43	Annular	147	0.947	04m45s	Europe, Asia, Africa, n N. America [Annular: s Europe, Russia]
+2076 Jan 06	10:07:27	Total	152	1.034	01m49s	Antarctica, Australia, S. America [Total: Antarctica]
+2076 Jun 01	17:31:21	Partial	119	0.290	-	S. America, Antarctica
+2076 Jul 01	06:50:43	Partial	157	0.275	-	Russia, N. America
+2076 Nov 26	11:43:00	Partial	124	0.731	-	Africa, Europe, w Asia
+2077 May 22	02:46:04	Total	129	1.029	02m54s	Indies, Australia, N.Z., Antarctica [Total: Australia]
+2077 Nov 15	17:07:55	Annular	134	0.937	07m54s	Americas [Annular: U.S., Carribean, Colombia, Venezuela, Brazil, Guyana, Suriname, French Guiana]
+2078 May 11	17:56:54	Total	139	1.070	05m40s	Americas [Total: Mexico, U.S.]
+2078 Nov 04	16:55:44	Annular	144	0.926	08m29s	Americas, Antarctica [Annular: Chile, Argentina]
+2079 May 01	10:50:12	Total	149	1.051	02m55s	w Americas, Europe, Africa, Asia [Total: U.S., Canada, Greenland]
+2079 Oct 24	18:11:21	Annular	154	0.948	03m39s	Antarctica, N.Z., S. America [Annular: Antarctica, New Zealand]
+2080 Mar 21	12:20:15	Partial	121	0.873	-	Antarctica, Africa
+2080 Sep 13	16:38:08	Partial	126	0.874	-	N. America, Europe, Africa
+2081 Mar 10	15:23:30	Annular	131	0.930	07m36s	S. America, Africa, Antarctica [Annular: Chile, Argentina, Ivory Coast, Ghana, Togo, Benin, Nigeria, Cameroon]
+2081 Sep 03	09:07:29	Total	136	1.072	05m33s	Africa, Europe, Asia [Total: Central Europe, Turkey, Syria, Iraq, Kuwait, Quatar, UAE, Saudi Arabia, Oman]
+2082 Feb 27	14:46:59	Annular	141	0.930	08m12s	Americas, Europe, Africa [Annular: Peru, Brazil, Suriname, French Guiana, Portugal, Spain, France, Italy, Germany, Austria]
+2082 Aug 24	01:16:20	Total	146	1.045	04m01s	Indies, Australia, Antarctica, N.Z. [Total: Indonesia, New Guinea, South Pacific]
+2083 Feb 16	18:06:36	Partial	151	0.943	-	Mexico, U.S, Canada
+2083 Jul 15	00:14:22	Partial	118	0.017	-	Greenland
+2083 Aug 13	12:34:40	Partial	156	0.615	-	S. America, Antarctica
+2084 Jan 07	17:30:23	Partial	123	0.872	-	Antarctica, S. America
+2084 Jul 03	01:50:25	Annular	128	0.942	04m25s	n Europe, Asia, N. America [Annular: Russia, U.S., Canada]
+2084 Dec 27	09:13:47	Total	133	1.040	03m04s	Africa, Antarctica, Australia [Total: South Atlantic and Indian Ocean]
+2085 Jun 22	03:21:15	Annular	138	0.970	03m29s	Asia, Indies, Australia [Annular: India, Myanmar, China, Central Pacific]
+2085 Dec 16	22:37:47	Annular	143	0.997	00m19s	Australia, N. America [Annular: Central Pacific]
+2086 Jun 11	11:07:13	Total	148	1.017	01m48s	S. America, Africa [Total: Nambia, Botswana, South Africa]
+2086 Dec 06	05:38:55	Partial	153	0.927	-	Asia
+2087 May 02	18:04:41	Partial	120	0.801	-	n Europe, n Asia, N. America
+2087 Jun 01	01:27:13	Partial	158	0.215	-	New Zealand
+2087 Oct 26	11:46:56	Partial	125	0.470	-	S. America, Antarctica
+2088 Apr 21	10:31:48	Total	130	1.047	03m58s	N. America, Africa, Europe, Asia [Total: Mauritania, Western Sahara, Mali, Algeria, Tunisia, Greece, Turkey, Russia, Kazakhstan, China]
+2088 Oct 14	14:48:05	Annular	135	0.973	02m38s	S. America, Antarctica, Africa [Annular: Chile, Argentina]
+2089 Apr 10	22:44:40	Annular	140	0.992	00m53s	Australia, Antarctica, N. America [Annular: Australia, Central Pacific]
+2089 Oct 04	01:15:22	Total	145	1.033	03m14s	Asia, Indies, Australia [Total: China, Central Pacific]
+2090 Mar 31	03:38:07	Partial	150	0.784	-	Antarctica, Australia, N.Z.
+2090 Sep 23	16:56:35	Total	155	1.056	03m36s	N. America, Europe, Africa, n Asia [Total: Canada, Greenland, U.K., France]
+2091 Feb 18	09:54:39	Partial	122	0.656	-	North Africa, Europe, Asia
+2091 Aug 15	00:34:42	Total	127	1.022	01m38s	Australia, Antarctica, N.Z. [Total: Southern Ocean (near Antarctica)]
+2092 Feb 07	15:10:19	Annular	132	0.984	01m48s	Americas, Europe, Africa [Annular: Panama, Colombia, Venezuela, Guyana, Morocco, Algeria]
+2092 Aug 03	09:59:31	Annular	137	0.979	02m31s	Africa [Annular: Liberia, Ivory Coast, Ghana, Togo, Benin, Nigeria, Cameroon, Chad, CAR, Sudan, Kenya, Somalia]
+2093 Jan 27	03:22:15	Total	142	1.034	02m58s	Indies, Australia, Antarctica, N.Z. [Total: Australia]
+2093 Jul 23	12:32:03	Annular	147	0.946	05m11s	Americas, Europe, Africa, Asia [Annular: U.S., Canada, Central Europe, Turkey, Iraq, Iran, Afghanistan, Pakistan]
+2094 Jan 16	18:59:03	Total	152	1.034	01m52s	S. America, Antarctica, N.Z. [Total: Antarctica]
+2094 Jun 13	00:22:10	Partial	119	0.162	-	Southern Ocean (near Antarctica)
+2094 Jul 12	13:24:34	Partial	157	0.422	-	North America, Asia
+2094 Dec 07	20:05:55	Partial	124	0.705	-	North America
+2095 Jun 02	10:07:39	Total	129	1.033	03m18s	Africa [Total: Nambia, South Africa, Botswana, Zambia, Mozambique, Madagascar]
+2095 Nov 27	01:02:57	Annular	134	0.933	08m47s	Asia, Indies, Australia [Annular: China, Korea, Japan, Central Pacific]
+2096 May 22	01:37:13	Total	139	1.074	06m06s	Asia, Indies, Australia, N. America [Total: Indonesia, Central Pacific]
+2096 Nov 15	00:36:14	Annular	144	0.924	08m53s	Indies, Australia, N.Z., Antarctica [Annular: Malaysia, Indonesia, New Guinea, Australia, New Zealand]
+2097 May 11	18:34:30	Total	149	1.054	03m10s	Asia, N. America, n Europe [Total: Alaska, Russia]
+2097 Nov 04	02:01:24	Annular	154	0.949	03m36s	Antarctica, Australia [Annular: Antarctica]
+2098 Apr 01	20:02:30	Partial	121	0.798	-	Antarctica, South America
+2098 Sep 25	00:31:15	Partial	126	0.787	-	Asia, North America
+2098 Oct 24	10:36:10	Partial	164	0.006	-	Southern Ocean (near Antarctica)
+2099 Mar 21	22:54:31	Annular	131	0.932	07m32s	Australia, N.Z., Antarctica, N. America [Annular: Central Pacific]
+2099 Sep 14	16:57:52	Total	136	1.068	05m18s	Americas, Africa [Total: Canada, U.S., Central Atlantic]
+2100 Mar 10	22:28:10	Annular	141	0.934	07m29s	Australia, N. America [Annular: Central Pacific, U.S.]
+2100 Sep 04	08:49:19	Total	146	1.040	03m32s	Africa, Antarctica [Total: Central Africa, Madagascar]

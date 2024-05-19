@@ -83,7 +83,7 @@ async def moon_video(ctx):
     url = randomIndex(moonvideos)
     await ctx.respond(url)
     
-@bot.slash_command(name="next-eclipse", description="Receive information about the next total solar eclipse date, optionally in a specified region.")
+@bot.slash_command(name="next-eclipse", description="Receive information about the next solar eclipse date, optionally in a specified region.")
 async def next_eclipse(ctx, keyword: str = None):
     if keyword:
         target_eclipse = None
@@ -98,13 +98,13 @@ async def next_eclipse(ctx, keyword: str = None):
     if keyword and not target_eclipse:
         no_kword = f"Unfortunately, no eclipse was found in the given region of '{keyword}'.\n\nHere is information about the soonest solar eclipse:"
         eclipse_str = parseEclipse(eclipseData[0])
-        embed.add_field(name=no_kword, value=f"* The {eclipse_str[0]}{eclipse_str[1]}", inline=False)
+        embed.add_field(name=no_kword, value=f"* The {eclipse_str[0]}{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)", inline=False)
     else:
         eclipse_str = parseEclipse(target_eclipse)
         if keyword:
-            embed.add_field(name=f"In {keyword}, the {eclipse_str[0]}", value=f"\n{eclipse_str[1]}", inline=False)
+            embed.add_field(name=f"In {keyword}, the {eclipse_str[0]}", value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)", inline=False)
         else:
-            embed.add_field(name=f"The {eclipse_str[0]}", value=f"\n{eclipse_str[1]}", inline=False)
+            embed.add_field(name=f"The {eclipse_str[0]}", value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)", inline=False)
     await ctx.respond(embed=embed)
         
 @bot.slash_command(name="moon-help", description="moonbot help")
@@ -114,7 +114,7 @@ async def help_command(ctx):
     embed.add_field(name="/moon-media", value="Send random moon media.", inline=False)
     embed.add_field(name="/moon-image", value="Send a random moon image.", inline=False)
     embed.add_field(name="/moon-video", value="Send a random moon video.", inline=False)
-    embed.add_field(name="/next-eclipse", value="Receive information about the next total solar eclipse date, optionally in a specified region.", inline=False)
+    embed.add_field(name="/next-eclipse", value="Receive information about the next solar eclipse date, optionally in a specified region.", inline=False)
     await ctx.respond(embed=embed)
 
 bot.run(BOT_TOKEN)
