@@ -114,4 +114,4 @@ async def help_command(ctx):
     embed.add_field(name="/next-eclipse", value="Receive information about the next total solar eclipse date, optionally in a specified region.", inline=False)
     await ctx.respond(embed=embed)
 
-# bot.run(BOT_TOKEN)
+bot.run(BOT_TOKEN)

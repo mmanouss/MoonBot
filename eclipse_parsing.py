@@ -1,5 +1,10 @@
 # Source: https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html
 
+def fileToList(fileName: str) -> list:
+    """Converts a given file into a list"""
+    with open(fileName, "r") as file:
+        return file.readlines()
+
 def parseEclipseData(eclipseList: list) -> list:
     """Parses the eclipse data into a list of dictionaries."""
     eclipse_list = []
@@ -33,22 +38,23 @@ def parseEclipseData(eclipseList: list) -> list:
     return eclipse_list
 
 def nextEclipse(next_eclipse: dict) -> str:
-    eclipse_magnitude_info = ". The eclipse magnitude represents how much of the Sun's diameter is obscured by the Moon during the peak of an eclipse."
-    eclipse_magnitude_calculation = f"The moon's apparent diameter will be {next_eclipse['eclipse_magnitude']*100}% of the Sun's apparent diameter, so "
+    eclipse_magnitude_calculation = f"The moon's apparent diameter will be {next_eclipse['eclipse_magnitude']*100:.1f}% of the Sun's apparent diameter, so "
     eclipse_magnitude_specifics = {"Total": eclipse_magnitude_calculation + "the Sun will be completely covered. ", 
                                 "Partial": eclipse_magnitude_calculation + "a portion of the Sun will be visible. ", 
                                 "Annular": eclipse_magnitude_calculation + "the outer edge of the Sun will still be visible. "}
     
-    eclipse_info = f"The next solar eclipse will be {next_eclipse['eclipse_type']} on {next_eclipse['date']} at {next_eclipse['time_of_greatest_eclipse']} UTC, with a central duration of {next_eclipse['central_duration']}" + eclipse_magnitude_info + eclipse_magnitude_specifics[next_eclipse['eclipse_type']] + f"It will be visible in {next_eclipse['geographic_region']}."
+    eclipse_info = f"The next solar eclipse will be {next_eclipse['eclipse_type']} on {next_eclipse['date']} at {next_eclipse['time_of_greatest_eclipse']} UTC, with a central duration of {next_eclipse['central_duration']}.\n" + eclipse_magnitude_specifics[next_eclipse['eclipse_type']] + f"\nIt will be visible in {next_eclipse['geographic_region']}."
     
     # Eclipse countdown logic
     import datetime
     eclipse_datetime = datetime.datetime.strptime(next_eclipse["date"] + " " + next_eclipse["time_of_greatest_eclipse"], "%Y %b %d %H:%M:%S")
-    time_remaining = eclipse_datetime - datetime.datetime.now(datetime.UTC)
+    time_remaining = eclipse_datetime - datetime.datetime.utcnow()
     days_remaining = time_remaining.days
     hours_remaining, remainder = divmod(time_remaining.seconds, 3600)
     minutes_remaining, seconds_remaining = divmod(remainder, 60)
-    countdown = f"The eclipse will occur in {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds."
+    countdown = f"Countdown: {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds."
     
     return eclipse_info + "\n\n" + countdown
 
+# eclipseData = parseEclipseData(fileToList("future_eclipses.txt"))
+# print(nextEclipse(eclipseData[0]))
