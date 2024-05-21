@@ -83,12 +83,13 @@ async def moon_video(ctx):
 @bot.slash_command(name="next-eclipse", description="Receive information about the next solar eclipse, optionally specifying region, type, or year.")
 @option("keyword", str, description="Provide a specific region, eclipse type, or year.")
 async def next_eclipse(ctx, keyword: str = None):
-    if keyword.isnumeric():
-        specifier = "year"
-    elif keyword.lower() == "partial" or keyword.lower() == "annular" or keyword.lower() == "total":
-        specifier = "type"
-    else:
-        specifier = "region"
+    if keyword:
+        if keyword.isnumeric():
+            specifier = "year"
+        elif keyword.lower() == "partial" or keyword.lower() == "annular" or keyword.lower() == "total":
+            specifier = "type"
+        else:
+            specifier = "region"
         
     target_eclipse = None
     if keyword and specifier == "year":
