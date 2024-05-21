@@ -2,7 +2,8 @@ import os
 import random
 import discord
 from discord.ext import commands
-from eclipse_parsing import parseEclipseFile, parseEclipse
+from discord import option
+from eclipse_parsing import fileToList, parseEclipseFile, parseEclipse
 
 # Eclipse Data Source: https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html
 
@@ -17,11 +18,6 @@ else:
 
 # add discord application commands
 bot = commands.Bot()
-
-def fileToList(fileName: str) -> list:
-    """Converts a given file into a list"""
-    with open(fileName, "r") as file:
-        return file.readlines()
 
 def randomIndex(listName):
     """Returns a random element within a given list"""
@@ -43,7 +39,8 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
                
 @bot.slash_command(name="moon-fact", description="Send a random moon fact, with optional keyword.")
-async def moon_fact(ctx, keyword: str = None):
+@option("keyword", str, description="This word will be present in the provided fact.")
+async def moon_fact(ctx, keyword: str):
     # Filter moonfacts based on the provided keyword
     filtered_facts = []
     if keyword:
@@ -83,28 +80,71 @@ async def moon_video(ctx):
     url = randomIndex(moonvideos)
     await ctx.respond(url)
     
-@bot.slash_command(name="next-eclipse", description="Receive information about the next solar eclipse, optionally in a specified region.")
+@bot.slash_command(name="next-eclipse", description="Receive information about the next solar eclipse, optionally specifying region, type, or year.")
+@option("keyword", str, description="Provide a specific region, eclipse type, or year.")
 async def next_eclipse(ctx, keyword: str = None):
-    if keyword:
-        target_eclipse = None
+    if keyword.isnumeric():
+        specifier = "year"
+    elif keyword.lower() == "partial" or keyword.lower() == "annular" or keyword.lower() == "total":
+        specifier = "type"
+    else:
+        specifier = "region"
+        
+    target_eclipse = None
+    if keyword and specifier == "year":
         for eclipse in eclipseData:
-            if keyword.lower() in eclipse['geographic_region'].lower():
+            if len(keyword) == 4 and keyword in eclipse['date'].lower():
                 target_eclipse = eclipse
                 break
-    else:
+    elif keyword and specifier == "type":
+        for eclipse in eclipseData:
+            if keyword.lower() == eclipse['eclipse_type'].lower():
+                target_eclipse = eclipse
+                break
+    elif keyword and specifier == "region":
+        for eclipse in eclipseData:
+            if len(keyword) > 3 and keyword.lower() in eclipse['geographic_region'].lower():
+                target_eclipse = eclipse
+                break
+    if not keyword:
         target_eclipse = eclipseData[0]
-    
+
     embed = discord.Embed(title="Upcoming Solar Eclipse...", color=0x36393e)
+
     if keyword and not target_eclipse:
-        no_kword = f"Unfortunately, no eclipse was found in the given region of '{keyword}'.\n\nHere is information about the soonest solar eclipse:"
+        no_kword = f"No upcoming eclipse was found with the given criteria '{keyword}'. Note that eclipse data is loaded up to the year 2100, and country abbreviations should be seperated by periods (ex. U.S., N.Z.). \n\nHere is information about the soonest solar eclipse:"
         eclipse_str = parseEclipse(eclipseData[0])
-        embed.add_field(name=no_kword, value=f"* The {eclipse_str[0]}{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)", inline=False)
+        embed.add_field(
+            name=no_kword,
+            value=f"* The {eclipse_str[0]}{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)",
+            inline=False
+        )
     else:
         eclipse_str = parseEclipse(target_eclipse)
-        if keyword:
-            embed.add_field(name=f"In {keyword}, the {eclipse_str[0]}", value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)", inline=False)
+        if keyword and specifier == "region":
+            embed.add_field(
+                name=f"In {keyword}, the soonest {eclipse_str[0]}",
+                value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)",
+                inline=False
+            )
+        elif keyword and specifier == "year":
+            embed.add_field(
+                name=f"In {keyword}, the first {eclipse_str[0]}",
+                value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)",
+                inline=False
+            )
+        elif keyword and specifier == "type":
+            embed.add_field(
+                name=f"The {eclipse_str[0]}",
+                value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)",
+                inline=False
+            )
         else:
-            embed.add_field(name=f"The {eclipse_str[0]}", value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)", inline=False)
+            embed.add_field(
+                name=f"The {eclipse_str[0]}",
+                value=f"\n{eclipse_str[1]}\n[Source: NASA](https://eclipse.gsfc.nasa.gov/solar.html)",
+                inline=False
+            )
     await ctx.respond(embed=embed)
         
 @bot.slash_command(name="moon-help", description="moonbot help")
