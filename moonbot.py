@@ -3,27 +3,12 @@ import random
 import discord
 from discord.ext import commands
 from discord import option
-from eclipse_parsing import fileToList, parseEclipseFile, parseEclipse
+from bot_functions import envGet, fileToList, randomIndex, parseEclipseFile, parseEclipse
 
 # Eclipse Data Source: https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html
 
-heroku = False  # set to true if hosting on heroku
-
-if heroku == True:
-    BOT_TOKEN = os.environ['BOT_TOKEN']
-else:
-    from dotenv import load_dotenv
-    load_dotenv('BOT_TOKEN.env')
-    BOT_TOKEN = os.getenv('BOT_TOKEN')
-
-# add discord application commands
+BOT_TOKEN = envGet("BOT_TOKEN", False)
 bot = commands.Bot()
-
-def randomIndex(listName):
-    """Returns a random element within a given list"""
-    index = random.randint(0, len(listName)-1)
-    content = listName[index].strip('\n')
-    return content
 
 moonfacts = list(set(fileToList("moonfacts.txt")))
 moonimgs = list(set(fileToList("moonimgs.txt")))

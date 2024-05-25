@@ -1,9 +1,25 @@
 # Source: https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html
+import os
+import random
 
+def envGet(env_name: str, heroku_hosting: bool) -> str:
+    if heroku_hosting == True:
+        return os.environ[env_name]
+    else:
+        from dotenv import load_dotenv
+        load_dotenv(env_name+'.env')
+        return os.getenv(env_name)
+    
 def fileToList(fileName: str) -> list:
     """Converts a given file into a list"""
     with open(fileName, "r") as file:
         return file.readlines()
+    
+def randomIndex(listName):
+    """Returns a random element within a given list"""
+    index = random.randint(0, len(listName)-1)
+    content = listName[index].strip('\n')
+    return content
 
 def parseEclipseFile(eclipseList: list) -> list:
     """Parses the eclipse data into a list of dictionaries."""
