@@ -25,7 +25,7 @@ async def on_ready():
                
 @bot.slash_command(name="moon-fact", description="Send a random moon fact, with optional keyword.")
 @option("keyword", str, description="This word will be present in the provided fact.")
-async def moon_fact(ctx, keyword: str):
+async def moon_fact(ctx, keyword: str = None):
     # Filter moonfacts based on the provided keyword
     filtered_facts = []
     if keyword:
