@@ -75,6 +75,3 @@ def parseEclipse(next_eclipse: dict) -> str:
     countdown = f"**Countdown: {days_remaining} days, {hours_remaining} hours, {minutes_remaining} minutes, and {seconds_remaining} seconds.**"
     
     return [eclipse_info, eclipse_info_p2 + "\n\n" + countdown]
-
-# eclipseData = parseEclipseFile(fileToList("future_eclipses.txt"))
-# print(parseEclipse(eclipseData[0]))
